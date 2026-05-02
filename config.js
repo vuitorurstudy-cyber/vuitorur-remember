@@ -1,5 +1,3 @@
-const path = require('path');
-
 let fileConfig = {};
 try {
   fileConfig = require('./config.json');
@@ -10,13 +8,12 @@ try {
 const config = {
   token: process.env.TOKEN || fileConfig.token,
   clientId: process.env.CLIENT_ID || fileConfig.clientId,
-  guildId: process.env.GUILD_ID || fileConfig.guildId,
+  guildId: process.env.GUILD_ID || fileConfig.guildId || null,
   canalId: process.env.CANAL_ID || fileConfig.canalId,
 };
 
-const faltando = Object.entries(config)
-  .filter(([, v]) => !v || v.includes('_AQUI'))
-  .map(([k]) => k);
+const obrigatorias = ['token', 'clientId', 'canalId'];
+const faltando = obrigatorias.filter((k) => !config[k] || config[k].includes('_AQUI'));
 
 if (faltando.length > 0) {
   console.error('[ERRO] Variáveis não configuradas:', faltando.join(', '));
