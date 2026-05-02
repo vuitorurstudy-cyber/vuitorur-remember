@@ -19,14 +19,14 @@ const rest = new REST({ version: '10' }).setToken(config.token);
 
 (async () => {
   try {
-    console.log(`\n🚀 Registrando ${comandos.length} slash command(s)...`);
+    console.log(`\n🚀 Registrando ${comandos.length} slash command(s) globalmente...`);
 
-    await rest.put(Routes.applicationGuildCommands(config.clientId, config.guildId), {
+    await rest.put(Routes.applicationCommands(config.clientId), {
       body: comandos,
     });
 
-    console.log('✅ Slash commands registrados com sucesso!');
-    console.log('   Agora execute: node index.js');
+    console.log('✅ Slash commands registrados globalmente com sucesso!');
+    console.log('⏳ Pode levar até 1 hora para aparecer em todos os servidores.');
   } catch (err) {
     console.error('[ERRO] Falha ao registrar comandos:', err.message);
   }
