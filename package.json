@@ -1,0 +1,16 @@
+{
+  "name": "discord-bot-enem",
+  "version": "1.0.0",
+  "description": "Bot de estudos para o ENEM com revisão espaçada",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "deploy": "node deploy-commands.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3"
+  }
+}

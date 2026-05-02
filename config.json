@@ -1,0 +1,6 @@
+{
+  "token": "SEU_TOKEN_AQUI",
+  "clientId": "SEU_CLIENT_ID_AQUI",
+  "guildId": "SEU_SERVER_ID_AQUI",
+  "canalId": "ID_DO_CANAL_PARA_THREADS"
+}
